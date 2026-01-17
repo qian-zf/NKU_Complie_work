@@ -1,0 +1,105 @@
+// 测试多个if语句的SysY代码
+int main() {
+    int a = 10;
+    int b = 20;
+    int c = 30;
+    int result = 0;
+
+    // 情况1：简单的if-else
+    if (a > 5) {
+        result = result + 1;
+    } else {
+        result = result - 1;
+    }
+
+    // 情况2：嵌套if-else（测试悬空else问题）
+    if (a > 0)
+        if (b > 15)
+            result = result + 10;
+        else  // 这个else应该与if(b>15)匹配
+            result = result + 20;
+
+    // 情况3：使用花括号明确作用域
+    if (a > 5) {
+        if (b > 25) {
+            result = result + 100;
+        }
+    } else {  // 这个else明确与if(a>5)匹配
+        result = result + 200;
+    }
+
+    // 情况4：多层嵌套if-else-if
+    if (a > 20) {
+        result = result + 1000;
+    } else if (b > 15) {  // 相当于 else { if (b > 15) ... }
+        result = result + 2000;
+    } else if (c > 25) {
+        result = result + 3000;
+    } else {
+        result = result + 4000;
+    }
+
+    // 情况5：复杂的嵌套
+    if (a > 0)
+        if (b > 0)
+            if (c > 0)
+                result = result + 1;
+            else  // 这个else与if(c>0)匹配
+                result = result + 2;
+        else  // 这个else与if(b>0)匹配
+            result = result + 3;
+
+    // 情况6：混合使用花括号
+    if (a > 5) {
+        if (b > 10) {
+            result = result + 50;
+        } else {
+            result = result + 60;
+        }
+    } else {
+        if (c > 20) {
+            result = result + 70;
+        } else {
+            result = result + 80;
+        }
+    }
+
+    // 情况7：空语句的if
+    if (a > 100);  // 空语句
+    else
+        result = result + 90;
+
+    // 情况8：if-else链
+    if (a == 1) {
+        result = 1;
+    } else if (a == 2) {
+        result = 2;
+    } else if (a == 3) {
+        result = 3;
+    } else {
+        result = 4;
+    }
+
+    // 情况9：在循环中的if语句
+    int i = 0;
+    while (i < 10) {
+        if (i % 2 == 0) {
+            result = result + i;
+        } else {
+            result = result - i;
+        }
+        i = i + 1;
+    }
+
+    // 情况10：函数调用中的if
+    if (getint() > 0) {
+        result = result * 2;
+    }
+
+    return result;
+}
+
+// 辅助函数
+int getint() {
+    return 42;
+}

@@ -1,0 +1,340 @@
+ASTree
+|-- FuncDecl main() -> int, line: 2
+|   `-- BlockStmt, line: 2
+|       |-- VarDeclStmt
+|       |   `-- VarDeclaration, BaseType: int
+|       |       `-- VarDeclarator
+|       |           |-- Var: 
+|       |           |   `-- LeftValueExpr a
+|       |           `-- Init: 
+|       |               `-- Initializer
+|       |                   `-- literal int: 10
+|       |-- VarDeclStmt
+|       |   `-- VarDeclaration, BaseType: int
+|       |       `-- VarDeclarator
+|       |           |-- Var: 
+|       |           |   `-- LeftValueExpr b
+|       |           `-- Init: 
+|       |               `-- Initializer
+|       |                   `-- literal int: 20
+|       |-- VarDeclStmt
+|       |   `-- VarDeclaration, BaseType: int
+|       |       `-- VarDeclarator
+|       |           |-- Var: 
+|       |           |   `-- LeftValueExpr c
+|       |           `-- Init: 
+|       |               `-- Initializer
+|       |                   `-- literal int: 30
+|       |-- VarDeclStmt
+|       |   `-- VarDeclaration, BaseType: int
+|       |       `-- VarDeclarator
+|       |           |-- Var: 
+|       |           |   `-- LeftValueExpr result
+|       |           `-- Init: 
+|       |               `-- Initializer
+|       |                   `-- literal int: 0
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 5
+|       |   |-- Then:
+|       |   |   `-- ExprStmt line: 10
+|       |   |       `-- BinaryExpr =
+|       |   |           |-- LeftValueExpr result
+|       |   |           `-- BinaryExpr +
+|       |   |               |-- LeftValueExpr result
+|       |   |               `-- literal int: 1
+|       |   `-- Else:
+|       |       `-- ExprStmt line: 12
+|       |           `-- BinaryExpr =
+|       |               |-- LeftValueExpr result
+|       |               `-- BinaryExpr -
+|       |                   |-- LeftValueExpr result
+|       |                   `-- literal int: 1
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 0
+|       |   |-- Then:
+|       |   |   `-- IfStmt
+|       |   |       |-- Condition:
+|       |   |       |   `-- BinaryExpr >
+|       |   |       |       |-- LeftValueExpr b
+|       |   |       |       `-- literal int: 15
+|       |   |       |-- Then:
+|       |   |       |   `-- ExprStmt line: 18
+|       |   |       |       `-- BinaryExpr =
+|       |   |       |           |-- LeftValueExpr result
+|       |   |       |           `-- BinaryExpr +
+|       |   |       |               |-- LeftValueExpr result
+|       |   |       |               `-- literal int: 10
+|       |   |       `-- Else:
+|       |   |           `-- ExprStmt line: 20
+|       |   |               `-- BinaryExpr =
+|       |   |                   |-- LeftValueExpr result
+|       |   |                   `-- BinaryExpr +
+|       |   |                       |-- LeftValueExpr result
+|       |   |                       `-- literal int: 20
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 5
+|       |   |-- Then:
+|       |   |   `-- IfStmt
+|       |   |       |-- Condition:
+|       |   |       |   `-- BinaryExpr >
+|       |   |       |       |-- LeftValueExpr b
+|       |   |       |       `-- literal int: 25
+|       |   |       |-- Then:
+|       |   |       |   `-- ExprStmt line: 25
+|       |   |       |       `-- BinaryExpr =
+|       |   |       |           |-- LeftValueExpr result
+|       |   |       |           `-- BinaryExpr +
+|       |   |       |               |-- LeftValueExpr result
+|       |   |       |               `-- literal int: 100
+|       |   `-- Else:
+|       |       `-- ExprStmt line: 28
+|       |           `-- BinaryExpr =
+|       |               |-- LeftValueExpr result
+|       |               `-- BinaryExpr +
+|       |                   |-- LeftValueExpr result
+|       |                   `-- literal int: 200
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 20
+|       |   |-- Then:
+|       |   |   `-- ExprStmt line: 33
+|       |   |       `-- BinaryExpr =
+|       |   |           |-- LeftValueExpr result
+|       |   |           `-- BinaryExpr +
+|       |   |               |-- LeftValueExpr result
+|       |   |               `-- literal int: 1000
+|       |   `-- Else:
+|       |       `-- IfStmt
+|       |           |-- Condition:
+|       |           |   `-- BinaryExpr >
+|       |           |       |-- LeftValueExpr b
+|       |           |       `-- literal int: 15
+|       |           |-- Then:
+|       |           |   `-- ExprStmt line: 35
+|       |           |       `-- BinaryExpr =
+|       |           |           |-- LeftValueExpr result
+|       |           |           `-- BinaryExpr +
+|       |           |               |-- LeftValueExpr result
+|       |           |               `-- literal int: 2000
+|       |           `-- Else:
+|       |               `-- IfStmt
+|       |                   |-- Condition:
+|       |                   |   `-- BinaryExpr >
+|       |                   |       |-- LeftValueExpr c
+|       |                   |       `-- literal int: 25
+|       |                   |-- Then:
+|       |                   |   `-- ExprStmt line: 37
+|       |                   |       `-- BinaryExpr =
+|       |                   |           |-- LeftValueExpr result
+|       |                   |           `-- BinaryExpr +
+|       |                   |               |-- LeftValueExpr result
+|       |                   |               `-- literal int: 3000
+|       |                   `-- Else:
+|       |                       `-- ExprStmt line: 39
+|       |                           `-- BinaryExpr =
+|       |                               |-- LeftValueExpr result
+|       |                               `-- BinaryExpr +
+|       |                                   |-- LeftValueExpr result
+|       |                                   `-- literal int: 4000
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 0
+|       |   |-- Then:
+|       |   |   `-- IfStmt
+|       |   |       |-- Condition:
+|       |   |       |   `-- BinaryExpr >
+|       |   |       |       |-- LeftValueExpr b
+|       |   |       |       `-- literal int: 0
+|       |   |       |-- Then:
+|       |   |       |   `-- IfStmt
+|       |   |       |       |-- Condition:
+|       |   |       |       |   `-- BinaryExpr >
+|       |   |       |       |       |-- LeftValueExpr c
+|       |   |       |       |       `-- literal int: 0
+|       |   |       |       |-- Then:
+|       |   |       |       |   `-- ExprStmt line: 46
+|       |   |       |       |       `-- BinaryExpr =
+|       |   |       |       |           |-- LeftValueExpr result
+|       |   |       |       |           `-- BinaryExpr +
+|       |   |       |       |               |-- LeftValueExpr result
+|       |   |       |       |               `-- literal int: 1
+|       |   |       |       `-- Else:
+|       |   |       |           `-- ExprStmt line: 48
+|       |   |       |               `-- BinaryExpr =
+|       |   |       |                   |-- LeftValueExpr result
+|       |   |       |                   `-- BinaryExpr +
+|       |   |       |                       |-- LeftValueExpr result
+|       |   |       |                       `-- literal int: 2
+|       |   |       `-- Else:
+|       |   |           `-- ExprStmt line: 50
+|       |   |               `-- BinaryExpr =
+|       |   |                   |-- LeftValueExpr result
+|       |   |                   `-- BinaryExpr +
+|       |   |                       |-- LeftValueExpr result
+|       |   |                       `-- literal int: 3
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 5
+|       |   |-- Then:
+|       |   |   `-- IfStmt
+|       |   |       |-- Condition:
+|       |   |       |   `-- BinaryExpr >
+|       |   |       |       |-- LeftValueExpr b
+|       |   |       |       `-- literal int: 10
+|       |   |       |-- Then:
+|       |   |       |   `-- ExprStmt line: 55
+|       |   |       |       `-- BinaryExpr =
+|       |   |       |           |-- LeftValueExpr result
+|       |   |       |           `-- BinaryExpr +
+|       |   |       |               |-- LeftValueExpr result
+|       |   |       |               `-- literal int: 50
+|       |   |       `-- Else:
+|       |   |           `-- ExprStmt line: 57
+|       |   |               `-- BinaryExpr =
+|       |   |                   |-- LeftValueExpr result
+|       |   |                   `-- BinaryExpr +
+|       |   |                       |-- LeftValueExpr result
+|       |   |                       `-- literal int: 60
+|       |   `-- Else:
+|       |       `-- IfStmt
+|       |           |-- Condition:
+|       |           |   `-- BinaryExpr >
+|       |           |       |-- LeftValueExpr c
+|       |           |       `-- literal int: 20
+|       |           |-- Then:
+|       |           |   `-- ExprStmt line: 61
+|       |           |       `-- BinaryExpr =
+|       |           |           |-- LeftValueExpr result
+|       |           |           `-- BinaryExpr +
+|       |           |               |-- LeftValueExpr result
+|       |           |               `-- literal int: 70
+|       |           `-- Else:
+|       |               `-- ExprStmt line: 63
+|       |                   `-- BinaryExpr =
+|       |                       |-- LeftValueExpr result
+|       |                       `-- BinaryExpr +
+|       |                           |-- LeftValueExpr result
+|       |                           `-- literal int: 80
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 100
+|       |   `-- Else:
+|       |       `-- ExprStmt line: 70
+|       |           `-- BinaryExpr =
+|       |               |-- LeftValueExpr result
+|       |               `-- BinaryExpr +
+|       |                   |-- LeftValueExpr result
+|       |                   `-- literal int: 90
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr ==
+|       |   |       |-- LeftValueExpr a
+|       |   |       `-- literal int: 1
+|       |   |-- Then:
+|       |   |   `-- ExprStmt line: 74
+|       |   |       `-- BinaryExpr =
+|       |   |           |-- LeftValueExpr result
+|       |   |           `-- literal int: 1
+|       |   `-- Else:
+|       |       `-- IfStmt
+|       |           |-- Condition:
+|       |           |   `-- BinaryExpr ==
+|       |           |       |-- LeftValueExpr a
+|       |           |       `-- literal int: 2
+|       |           |-- Then:
+|       |           |   `-- ExprStmt line: 76
+|       |           |       `-- BinaryExpr =
+|       |           |           |-- LeftValueExpr result
+|       |           |           `-- literal int: 2
+|       |           `-- Else:
+|       |               `-- IfStmt
+|       |                   |-- Condition:
+|       |                   |   `-- BinaryExpr ==
+|       |                   |       |-- LeftValueExpr a
+|       |                   |       `-- literal int: 3
+|       |                   |-- Then:
+|       |                   |   `-- ExprStmt line: 78
+|       |                   |       `-- BinaryExpr =
+|       |                   |           |-- LeftValueExpr result
+|       |                   |           `-- literal int: 3
+|       |                   `-- Else:
+|       |                       `-- ExprStmt line: 80
+|       |                           `-- BinaryExpr =
+|       |                               |-- LeftValueExpr result
+|       |                               `-- literal int: 4
+|       |-- VarDeclStmt
+|       |   `-- VarDeclaration, BaseType: int
+|       |       `-- VarDeclarator
+|       |           |-- Var: 
+|       |           |   `-- LeftValueExpr i
+|       |           `-- Init: 
+|       |               `-- Initializer
+|       |                   `-- literal int: 0
+|       |-- WhileStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr <
+|       |   |       |-- LeftValueExpr i
+|       |   |       `-- literal int: 10
+|       |   `-- Body:
+|       |       `-- BlockStmt, line: 85
+|       |           |-- IfStmt
+|       |           |   |-- Condition:
+|       |           |   |   `-- BinaryExpr ==
+|       |           |   |       |-- BinaryExpr %
+|       |           |   |       |   |-- LeftValueExpr i
+|       |           |   |       |   `-- literal int: 2
+|       |           |   |       `-- literal int: 0
+|       |           |   |-- Then:
+|       |           |   |   `-- ExprStmt line: 87
+|       |           |   |       `-- BinaryExpr =
+|       |           |   |           |-- LeftValueExpr result
+|       |           |   |           `-- BinaryExpr +
+|       |           |   |               |-- LeftValueExpr result
+|       |           |   |               `-- LeftValueExpr i
+|       |           |   `-- Else:
+|       |           |       `-- ExprStmt line: 89
+|       |           |           `-- BinaryExpr =
+|       |           |               |-- LeftValueExpr result
+|       |           |               `-- BinaryExpr -
+|       |           |                   |-- LeftValueExpr result
+|       |           |                   `-- LeftValueExpr i
+|       |           `-- ExprStmt line: 91
+|       |               `-- BinaryExpr =
+|       |                   |-- LeftValueExpr i
+|       |                   `-- BinaryExpr +
+|       |                       |-- LeftValueExpr i
+|       |                       `-- literal int: 1
+|       |-- IfStmt
+|       |   |-- Condition:
+|       |   |   `-- BinaryExpr >
+|       |   |       |-- Call getint
+|       |   |       `-- literal int: 0
+|       |   |-- Then:
+|       |   |   `-- ExprStmt line: 96
+|       |   |       `-- BinaryExpr =
+|       |   |           |-- LeftValueExpr result
+|       |   |           `-- BinaryExpr *
+|       |   |               |-- LeftValueExpr result
+|       |   |               `-- literal int: 2
+|       `-- ReturnStmt
+|           `-- LeftValueExpr result
+`-- FuncDecl getint() -> int, line: 103
+    `-- ReturnStmt
+        `-- literal int: 42

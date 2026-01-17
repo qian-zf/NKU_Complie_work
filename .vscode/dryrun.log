@@ -1,0 +1,41 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'd:/������ ����/25nku-compile'
+ 
+�ܾ����� - FRONTEND
+�ܾ����� - MIDDLEEND
+�ܾ����� - BACKEND
+�ܾ����� - INTERFACES
+�ܾ����� - UTILS
+�Ҳ����ļ� - -NAME
+�Ҳ����ļ� - -TYPE
+�Ҳ����ļ� - F
+
+bison -d --language=c++ --defines=frontend/parser/yacc.h -o frontend/parser/yacc.cpp frontend/parser/yacc.y
+if [ -f frontend/parser/yacc.h ]; then clang-format -i frontend/parser/yacc.h; fi
+if [ -f frontend/parser/yacc.cpp ]; then clang-format -i frontend/parser/yacc.cpp; fi
+if [ -f frontend/parser/location.hh ]; then clang-format -i frontend/parser/location.hh; fi
+flex --c++ --outfile=frontend/parser/lexer.cpp frontend/parser/lexer.l
+if [ -f frontend/parser/lexer.cpp ]; then clang-format -i frontend/parser/lexer.cpp; fi
+bison -d --language=c++ --defines=frontend/parser/yacc.h -o frontend/parser/yacc.cpp frontend/parser/yacc.y
+if [ -f frontend/parser/yacc.h ]; then clang-format -i frontend/parser/yacc.h; fi
+if [ -f frontend/parser/yacc.cpp ]; then clang-format -i frontend/parser/yacc.cpp; fi
+if [ -f frontend/parser/location.hh ]; then clang-format -i frontend/parser/location.hh; fi
+bison -d --language=c++ --defines=frontend/parser/yacc.h -o frontend/parser/yacc.cpp frontend/parser/yacc.y
+if [ -f frontend/parser/yacc.h ]; then clang-format -i frontend/parser/yacc.h; fi
+if [ -f frontend/parser/yacc.cpp ]; then clang-format -i frontend/parser/yacc.cpp; fi
+if [ -f frontend/parser/location.hh ]; then clang-format -i frontend/parser/location.hh; fi
+mkdir -p obj
+ 
+mkdir -p obj/frontend/parser/
+echo "Compiling frontend/parser/yacc.cpp -> obj/frontend/parser/yacc.o"
+g++ -O2 -MMD -MP -std=c++17 -I. -Iinterfaces -Iutils -Wall -Wextra -Wpedantic -Werror -g -Wno-unused-parameter -DLOCAL_TEST -c frontend/parser/yacc.cpp -o obj/frontend/parser/yacc.o
+mkdir -p obj/frontend/parser/
+echo "Compiling frontend/parser/lexer.cpp -> obj/frontend/parser/lexer.o"
+g++ -O2 -MMD -MP -std=c++17 -I. -Iinterfaces -Iutils -Wall -Wextra -Wpedantic -Werror -g -Wno-unused-parameter -DLOCAL_TEST -c frontend/parser/lexer.cpp -o obj/frontend/parser/lexer.o
+echo "Compiling main.cpp -> obj/main.o"
+g++ -O2 -MMD -MP -std=c++17 -I. -Iinterfaces -Iutils -Wall -Wextra -Wpedantic -Werror -g -Wno-unused-parameter -DLOCAL_TEST -c main.cpp -o obj/main.o
+mkdir -p bin
+echo "Linking object files -> bin/compiler"
+g++  obj/frontend/parser/yacc.o obj/frontend/parser/lexer.o obj/main.o -o bin/compiler
+make.exe: Leaving directory 'd:/������ ����/25nku-compile'
+ 
